@@ -1,0 +1,292 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+body {
+  font-family: "Nunito", sans-serif;
+}
+:root {
+  --primary: #fea41e;
+  --primary-hover: #fe831e;
+  --secondary: #dbd3d3;
+  --pure: #fff;
+  --dark: #232323;
+  --gray: #cccccc69;
+  --purple: #191943;
+  --links: blue;
+  --transition: all 0.3s ease-in-out;
+}
+.trigger {
+  padding: 0 24px;
+  font-size: 18px;
+  line-height: 64px;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.trigger:hover {
+  color: var(--primary);
+}
+
+.loginbtn {
+  padding: 0 10px;
+  border-radius: 20px;
+  font-weight: 500;
+  background-color: var(--purple);
+  color: white;
+}
+.login-sec {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+.logo {
+  background-color: var(--primary);
+  height: 64px;
+  margin: 0;
+  border-left: 1px solid white;
+}
+.ant-layout-sider {
+  background-color: white !important;
+}
+main {
+  height: 90vh;
+  overflow-y: scroll;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+main::-webkit-scrollbar {
+  width: 0px;
+}
+.information p {
+  color: gray;
+}
+.red {
+  color: red;
+}
+.green {
+  color: rgb(30, 240, 30);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  color: white;
+  cursor: pointer;
+  min-width: 100px;
+  text-align: center;
+  background-color: var(--primary-hover);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+/*  */
+.inputarea {
+  padding: 5px 10px;
+  border: none;
+  border-bottom: 2px solid;
+  outline: none;
+  width: 100%;
+  background: none;
+}
+.topbtn {
+  display: flex;
+  justify-content: center;
+}
+.addbtn {
+  padding: 5px 15px;
+  font-size: larger;
+  border: none;
+  width: max-content;
+  background-color: var(--primary);
+  color: white;
+  transition: var(--transition);
+  border-radius: 30px;
+  margin-top: 20px;
+}
+.addbtn:hover {
+  background-color: var(--primary-hover);
+}
+.inputform {
+  display: grid;
+  height: max-content;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.selectroom {
+  border: none;
+  width: 200%;
+}
+.Descreption {
+  width: 200%;
+  font-size: 18px;
+  border: none;
+  outline: none;
+}
+.selectroom::-webkit-scrollbar {
+  width: 5px;
+  background-color: var(--secondary);
+  border-radius: 30px;
+}
+
+/* table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.uploadimages {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 20px;
+  align-items: center;
+}
+.eachuploadimage {
+  width: 100%;
+}
+.eachuploadimage > img {
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
+}
+.imagedelete {
+  position: absolute;
+  right: 25px;
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+.imagedelete:hover {
+  color: red;
+}
+.updatewholebg {
+  width: 100vw;
+  z-index: 99;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.364);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.updateitems {
+  width: 40%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  padding: 10px 0;
+  background-color: white;
+  border-radius: 10px;
+}
+.close {
+  position: absolute;
+  right: 25px;
+  cursor: pointer;
+}
+.updatehotel {
+  overflow-y: scroll;
+  width: 100%;
+  height: 90vh;
+}
+.hotelinput {
+  padding: 10px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+.updateimagediv {
+  width: 100%;
+}
+.eachupdateimage {
+  width: 200px;
+}
+.eachupdateimage img {
+  min-width: 100%;
+  min-height: 100%;
+  display: block;
+}
+.deleteupdateimg:hover {
+  border: solid red;
+  color: red;
+}
+.selectionroom {
+  background: none;
+}
+.inputformaddroom {
+  width: 80%;
+  padding: 10px 30px;
+}
+.homecontainer {
+  position: relative;
+  height: 100vh;
+  background: rgb(2, 6, 241);
+  background: linear-gradient(
+    130deg,
+    rgba(2, 6, 241, 1) 0%,
+    rgba(252, 57, 9, 1) 100%
+  );
+}
+.subhomecontainer {
+  background: var(--primary);
+  position: absolute;
+  top: 0;
+  width: 100%;
+  clip-path: polygon(0 0, 100% 0%, 100% 35%, 0 61%);
+  height: 100%;
+}
+.homebtn {
+  height: max-content;
+  padding: 5px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  background-color: #191943;
+  color: white;
+}
+.homeinfo {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  position: absolute;
+  top: 45%;
+  justify-content: center;
+  align-items: center;
+}
+.homeinfo > h3 {
+  color: white;
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+}
+.homeinfo > p {
+  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  color: var(--secondary);
+}
