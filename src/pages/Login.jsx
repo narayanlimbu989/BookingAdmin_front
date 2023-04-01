@@ -39,7 +39,7 @@ const Login = () => {
       className="login-sec py-5 d-flex flex-column align-items-center justify-content-center"
       style={{ background: "#fea41e" }}
     >
-      <div className="my-5 w-25 bg-white rounded-3 mx-auto p-3">
+      <div className="my-5 adminlogin   bg-white rounded-3 mx-auto p-3">
         <h1 className="mb-5">
           Book<span style={{ color: " #fea41e" }}>nify</span>
         </h1>

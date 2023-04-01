@@ -304,3 +304,8 @@ button.pageactive {
   background-color: var(--primary);
   color: white;
 }
+@media screen and (max-width: 480px) {
+  .adminlogin {
+    width: 80%;
+  }
+}
