@@ -284,9 +284,23 @@ tr:nth-child(even) {
 }
 .homeinfo > h3 {
   color: white;
-  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
 }
 .homeinfo > p {
-  text-shadow: 0 0 3px #FF0000, 0 0 5px #0000FF;
+  text-shadow: 0 0 3px #ff0000, 0 0 5px #0000ff;
   color: var(--secondary);
+}
+.pageination {
+  justify-content: end;
+  margin-top: 20px;
+  padding: 10px;
+}
+.pageination button {
+  border: none;
+  padding: 0 10px;
+  background-color: white;
+}
+button.pageactive {
+  background-color: var(--primary);
+  color: white;
 }

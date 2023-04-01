@@ -160,7 +160,7 @@ const Hotelupdate = ({ setopen, hotel, calldata }) => {
                 onChange={gethotelinfo}
                 className="inputarea fs-5"
               >
-                <option >Select city</option>
+                <option>Select city</option>
                 <option value="kathmandu">kathmandu</option>
                 <option value="chitwan">chitwan</option>
                 <option value="pokhara">pokhara</option>
@@ -194,7 +194,7 @@ const Hotelupdate = ({ setopen, hotel, calldata }) => {
                 onChange={gethotelinfo}
                 className="inputarea fs-5"
               >
-                <option >Select type</option>
+                <option>Select type</option>
                 <option value="Hotels">Hotels</option>
                 <option value="Apartments">Apartments</option>
                 <option value="Resorts">Resorts</option>

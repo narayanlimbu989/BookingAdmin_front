@@ -56,8 +56,7 @@ const Signup = () => {
             <div className="col-12">
               <div className="auth-container d-flex flex-column gap-2 justify-content-center align-items-center">
                 <div className="authenticate p-4 border rounded bg-white">
-                  <h1 className="mb-5">Booknify</h1>
-
+                  <h1 className="mb-5">Book<span style={{ color: " #fea41e" }}>nify</span></h1>
                   <h4>
                     Sign Up{" "}
                     <HiOutlineArrowNarrowRight style={{ color: "#fe831e" }} />

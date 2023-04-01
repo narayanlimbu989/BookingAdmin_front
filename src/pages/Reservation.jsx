@@ -3,10 +3,18 @@ import React, { useEffect, useState } from "react";
 import { AiFillDelete } from "react-icons/ai";
 import { toast } from "react-toastify";
 import { api } from "../Http_service/Httpservice";
+import PageInation from "../components/PageInation";
 
 const Reservation = () => {
+  const [currentpage, setCurrentpage] = useState(1);
+  const itemperpage = 10;
   const [loading, setLoading] = useState(false);
   const [reserve, setReserve] = useState([]);
+
+  const lastpost = currentpage * itemperpage;
+  const firstpost = lastpost - itemperpage;
+
+  const itemInpage = reserve.slice(firstpost, lastpost);
 
   const calldata = async () => {
     const { data } = await api.get("/reserve/api/find/reservehotels");
@@ -43,8 +51,8 @@ const Reservation = () => {
         </tr>
         {loading ? (
           "please wait!"
-        ) : reserve.length > 0 ? (
-          reserve.map((i, j) => {
+        ) : itemInpage.length > 0 ? (
+          itemInpage.map((i, j) => {
             return (
               <tr key={j}>
                 <td>
@@ -93,6 +101,14 @@ const Reservation = () => {
           <p>No reservation made</p>
         )}
       </table>
+      {itemInpage.length > 0 && (
+        <PageInation
+          totalpost={reserve.length}
+          itemperpage={itemperpage}
+          currentpage={currentpage}
+          setCurrentpage={setCurrentpage}
+        />
+      )}
     </div>
   );
 };

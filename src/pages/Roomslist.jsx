@@ -4,12 +4,21 @@ import { BiEdit } from "react-icons/bi";
 import { toast } from "react-toastify";
 import Roomupdate from "../components/Roomupdate";
 import { api } from "../Http_service/Httpservice";
+import PageInation from "../components/PageInation";
 
 const Roomlist = () => {
+  const [currentpage, setCurrentpage] = useState(1);
+  const itemperpage = 10;
+
   const [id, setId] = useState("");
   const [open, setopen] = useState(false);
   const [loading, setloading] = useState(false);
   const [Rooms, setroom] = useState([]);
+
+  const lastpost = currentpage * itemperpage;
+  const firstpost = lastpost - itemperpage;
+
+  const itemInpage = Rooms.slice(firstpost, lastpost);
 
   const calldata = async () => {
     const { data } = await api.get("/rooms/api/find/getuserrooms");
@@ -51,8 +60,8 @@ const Roomlist = () => {
             <th>Max people</th>
             <th>Hotel name</th>
           </tr>
-          {Rooms?.length > 0 ? (
-            Rooms?.map((i, j) => {
+          {itemInpage?.length > 0 ? (
+            itemInpage?.map((i, j) => {
               return (
                 <tr key={j}>
                   <td>{i.title}</td>
@@ -81,6 +90,14 @@ const Roomlist = () => {
             </p>
           )}
         </table>
+      )}
+      {itemInpage.length > 0 && (
+        <PageInation
+          totalpost={Rooms.length}
+          itemperpage={itemperpage}
+          currentpage={currentpage}
+          setCurrentpage={setCurrentpage}
+        />
       )}
 
       {open && <Roomupdate setopen={setopen} id={id} calldata={calldata} />}

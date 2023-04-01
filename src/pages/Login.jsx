@@ -40,7 +40,9 @@ const Login = () => {
       style={{ background: "#fea41e" }}
     >
       <div className="my-5 w-25 bg-white rounded-3 mx-auto p-3">
-        <h1 className="mb-5">Booknify</h1>
+        <h1 className="mb-5">
+          Book<span style={{ color: " #fea41e" }}>nify</span>
+        </h1>
         <h4>Sign In</h4>
         <form>
           <Costominput

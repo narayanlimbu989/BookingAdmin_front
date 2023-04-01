@@ -133,7 +133,7 @@ const Dashboard = () => {
               <BiDotsVerticalRounded />
             </div>
             <div className="bottom d-flex align-items-center justify-content-between">
-              <h5 className="mb-0">{reserve?.length} reserve</h5>
+              <h5 className="mb-0">{reserve?.length} reservations</h5>
               <div className="bar d-flex flex-column align-items-end">
                 <span className="red mb-0 d-flex align-items-center">
                   <BsArrowDownLeft />

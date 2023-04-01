@@ -4,12 +4,21 @@ import { BiEdit } from "react-icons/bi";
 import { toast } from "react-toastify";
 import Hotelupdate from "../components/Hotelupdate";
 import { api } from "../Http_service/Httpservice";
+import PageInation from "../components/PageInation";
 
 const HotelsList = () => {
+  const [currentpage, setCurrentpage] = useState(1);
+  const itemperpage = 10;
+
   const [loading, setloading] = useState(false);
   const [hotelList, setList] = useState([]);
   const [hotel, setHotel] = useState(null);
   const [open, setopen] = useState(false);
+
+  const lastpost = currentpage * itemperpage;
+  const firstpost = lastpost - itemperpage;
+
+  const itemInpage = hotelList.slice(firstpost, lastpost);
 
   const calldata = async () => {
     const { data } = await api.get("/hotels/api/onlyuserhotels");
@@ -53,8 +62,8 @@ const HotelsList = () => {
             <th>Type</th>
             <th>Feature</th>
           </tr>
-          {hotelList?.length > 0 ? (
-            hotelList?.map((i, j) => {
+          {itemInpage?.length > 0 ? (
+            itemInpage?.map((i, j) => {
               return (
                 <tr key={j}>
                   <td>{i.name}</td>
@@ -89,7 +98,18 @@ const HotelsList = () => {
           )}
         </table>
       )}
-      {open && <Hotelupdate setopen={setopen} hotel={hotel} calldata={calldata}/>}
+
+      {itemInpage.length > 0 && (
+        <PageInation
+          totalpost={hotelList.length}
+          itemperpage={itemperpage}
+          currentpage={currentpage}
+          setCurrentpage={setCurrentpage}
+        />
+      )}
+      {open && (
+        <Hotelupdate setopen={setopen} hotel={hotel} calldata={calldata} />
+      )}
     </div>
   );
 };
