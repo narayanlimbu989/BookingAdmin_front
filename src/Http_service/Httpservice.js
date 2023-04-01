@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const base_url = "https://bookingapi-8rjt.onrender.com/hotels/api";
+export const base_url = "https://bookingapi-8rjt.onrender.com";
 
 const token = JSON.parse(localStorage.getItem("Admin"))?.token;
 
